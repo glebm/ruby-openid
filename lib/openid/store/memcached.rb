@@ -9,7 +9,7 @@ module OpenID
     class Memcached < Memcache
       def get_association(server_url, handle=nil)
         begin
-          serialized = cache_client.get(assoc_key(server_url, handle)
+          serialized = cache_client.get(assoc_key(server_url, handle))
           return deserialize(serialized) if serialized
           return nil
         rescue 
