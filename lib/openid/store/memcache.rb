@@ -7,10 +7,10 @@ module OpenID
   module Store
     class Memcache < Interface
       attr_accessor :key_prefix
-      attr_accessor :cache_client
+      attr_reader :cache_client
 
-      def initialize(cache_client, key_prefix='openid-store:')
-        @cache_client = cache_client
+      def initialize(cache, key_prefix='openid-store:')
+        @cache_client = cache
         self.key_prefix = key_prefix
       end
 
